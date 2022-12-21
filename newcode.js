@@ -18,7 +18,7 @@ imap.once('ready', function() {
     });
     f.on('message', function(msg, seqno) {
       console.log('Message #%d', seqno);
-      var prefix = '(#' + seqno + ') '
+      var prefix = '(#' + seqno + ') ';
       msg.on('body', function(stream, info) {
         simpleParser(stream, function(err, parsed) {
           console.log(prefix + 'Subject:', parsed.subject);
